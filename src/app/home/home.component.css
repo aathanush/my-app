@@ -23,6 +23,10 @@
     color: white;
     border-radius: 8px;
   }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
   
   @media (min-width: 500px) and (max-width: 768px) {
     .results {
