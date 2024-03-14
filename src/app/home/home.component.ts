@@ -8,13 +8,13 @@ import { CommonModule } from '@angular/common';
     CommonModule,
   ],
   template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by city">
-        <button class="primary" type="button">Search</button>
-      </form>
-    </section>
-  `,
+  <section>
+    <form>
+      <input type="text" placeholder="Filter by city">
+      <button class="primary" type="button">Search</button>
+    </form>
+  </section>
+`,
   styleUrls: ['./home.component.css'],
 })
 
