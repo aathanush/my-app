@@ -12,8 +12,10 @@ import { Doctor } from '../doctor';
     <img class="listing-photo" [src]="doctor?.photo"
       alt="Photo of {{doctor?.docname}}"/>
     <section class="listing-description">
-      <h2 class="listing-heading">{{doctor?.specialization}}</h2>
-      <p class="listing-location">{{doctor?.rating}}</p>
+      <h2 class="listing-heading">{{doctor?.docname}}</h2>
+      <p class="listing-location">Specialization: {{doctor?.specialization}}</p>
+      <p class="listing-location">Rating: {{doctor?.rating}}</p>
+
     </section>
   </article>
 `,
@@ -21,9 +23,11 @@ import { Doctor } from '../doctor';
 })
 export class DocdetailsComponent {
     route: ActivatedRoute = inject(ActivatedRoute);
+    patientService = inject(PatientService);
     doctor: Doctor | undefined;
     doctorId = -1;
     constructor() {
         this.doctorId = Number(this.route.snapshot.params['id']);
+        this.doctor = this.patientService.getDoctorsById(this.doctorId);
     }
 }
