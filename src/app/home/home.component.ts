@@ -17,7 +17,7 @@ import { Doctor } from '../doctor';
     </form>
   </section>
   <section class="results">
-    <app-doctor [doctor]="doctor"></app-doctor>
+    <app-doctor *ngFor="let doctor of doctorList" [doctor]="doctor"></app-doctor>
   </section>
   `,
   styleUrls: ['./home.component.css'],
@@ -25,13 +25,28 @@ import { Doctor } from '../doctor';
 
 export class HomeComponent {
   readonly baseUrl = 'assets/';
-  doctor: Doctor = {
+  doctorList: Doctor[] = [{
     id: 1,
     docname: 'Dr. John',
     specialization: 'Cardiologist',
     rating: 4.5,
     photo: this.baseUrl + 'doctor.jpg',
     
-};
+},
+{
+  id: 2,
+  docname: 'Dr. Smith',
+  specialization: 'General Doctor',
+  rating: 4.5,
+  photo: this.baseUrl + 'doctor.jpg',
+  
+},{
+  id: 3,
+  docname: 'Dr. John Smith',
+  specialization: 'Dermatologist',
+  rating: 5.0,
+  photo: this.baseUrl + 'doctor.jpg',
+  
+},]
 
 }
