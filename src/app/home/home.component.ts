@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorComponent } from '../doctor/doctor.component';
 import { Doctor } from '../doctor';
+import { PatientService } from '../patient.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -25,28 +26,9 @@ import { Doctor } from '../doctor';
 
 export class HomeComponent {
   readonly baseUrl = 'assets/';
-  doctorList: Doctor[] = [{
-    id: 1,
-    docname: 'Dr. John',
-    specialization: 'Cardiologist',
-    rating: 4.5,
-    photo: this.baseUrl + 'doctor.jpg',
-    
-},
-{
-  id: 2,
-  docname: 'Dr. Smith',
-  specialization: 'General Doctor',
-  rating: 4.5,
-  photo: this.baseUrl + 'doctor.jpg',
-  
-},{
-  id: 3,
-  docname: 'Dr. John Smith',
-  specialization: 'Dermatologist',
-  rating: 5.0,
-  photo: this.baseUrl + 'doctor.jpg',
-  
-},]
-
+  doctorList: Doctor[] = [];
+  patientService = inject(PatientService);
+  constructor() {
+    this.doctorList = this.patientService.getAllDoctors();
+  }
 }
