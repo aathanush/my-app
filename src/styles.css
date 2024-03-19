@@ -15,7 +15,7 @@
     --disabled-color: #0c2c4a;
   }
   
-  button.primary {
+  button {
     padding: 10px;
     border: solid 1px var(--primary-color);
     background: var(--primary-color);

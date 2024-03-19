@@ -12,11 +12,25 @@ import { Router, RouterModule, RouterOutlet, RouterLink } from '@angular/router'
   ],
   template: `
     <main>
-      <a [routerLink]="['/']">
-      <header class="brand-name">
-        <img class="brand-logo" src="/assets/daa.png" alt="logo" aria-hidden="true">
-      </header>
-      </a>
+      <nav>
+        <ul>
+          <li>
+        <a [routerLink]="['/']">
+          Doctors 
+        </a>
+          </li>
+          <li>
+        <a [routerLink]="['/appointments']">
+          Appointments
+        </a>
+          </li>
+          <li>
+        <a [routerLink]="['/appointments']">
+          Log out
+        </a>
+          </li>
+        </ul>
+      </nav>
       <section class="content">
         <router-outlet></router-outlet>
       </section>
