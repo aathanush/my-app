@@ -25,7 +25,7 @@ import { Router, RouterModule, RouterOutlet, RouterLink } from '@angular/router'
         </a>
           </li>
           <li>
-        <a [routerLink]="['/appointments']">
+        <a [routerLink]="['/login']">
           Log out
         </a>
           </li>
