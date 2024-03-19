@@ -26,15 +26,15 @@ import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
       <br>
       <form [formGroup]="applyForm" (submit)="submitApplication()">
         <label for="name">Name</label>
-        <input id="name" type="text" formControlName="name">
+        <input id="name" type="text" formControlName="name" required="true">
 
         <label for="date">Date of Appointment (DD-MM-YYYY)</label>
-        <input id="date" type="date" formControlName="date">
+        <input id="date" type="date" formControlName="date" required>
 
         <label for="time">Time of appointment</label>
-        <input id="time" type="time" formControlName="time">
+        <input id="time" type="time" formControlName="time" required>
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
+        <input id="email" type="email" formControlName="email" required>
         <button type="submit" class="primary">Request Appointment</button>
       </form>
     </section>
@@ -48,10 +48,10 @@ export class DocdetailsComponent {
     doctor: Doctor | undefined;
     doctorId = -1;
     applyForm = new FormGroup({
-      name: new FormControl(''),
-      date: new FormControl(''),
-      time: new FormControl(''),
-      email: new FormControl('')
+      name: new FormControl(null),
+      date: new FormControl(null),
+      time: new FormControl(null),
+      email: new FormControl(null)
     });
     constructor() {
         this.doctorId = Number(this.route.snapshot.params['id']);
