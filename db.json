@@ -1,0 +1,27 @@
+{
+    "doctors": [
+        {
+            "id": 1,
+            "docname": 'Dr. John',
+            "specialization": 'Cardiologist',
+            "rating": 4.5,
+            "photo": this.baseUrl + 'doctor.jpg',
+            
+        },
+        {
+          "id": 2,
+          "docname": 'Dr. Smith',
+          "specialization": 'General Doctor',
+          "rating": 4.5,
+          "photo": this.baseUrl + 'doctor.jpg',
+          
+        },{
+          "id": 3,
+          "docname": 'Dr. John Smith',
+          "specialization": 'Dermatologist',
+          "rating": 5.0,
+          "photo": this.baseUrl + 'doctor.jpg',
+          
+        }
+    ]
+}
