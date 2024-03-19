@@ -37,4 +37,11 @@ getAllDoctors(): Doctor[] {
 getDoctorsById(id: number): Doctor | undefined{
   return this.doctorList.find(doctor => doctor.id === id);
 }
+
+submitAppointmentRequest(name: string, date: string, time: string, email: string) {
+  
+    console.log(`Appointment request received for ${name} on ${date} at ${time} with email ${email}`);
+  
+
+}
 }
