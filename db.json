@@ -15,7 +15,8 @@
           "rating": 4.5,
           "photo": "assets/doctor.jpg"
           
-        },{
+        },
+        {
           "id": 3,
           "docname": "Dr. John Smith",
           "specialization": "Dermatologist",
