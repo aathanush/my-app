@@ -13,12 +13,12 @@ import { PatientService } from '../patient.service';
   template: `
   <section>
     <form>
-      <input type="text" placeholder="Filter by city">
-      <button class="primary" type="button">Search</button>
+      <input type="text" placeholder="Filter by specialization" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
     </form>
   </section>
   <section class="results">
-    <app-doctor *ngFor="let doctor of doctorList" [doctor]="doctor"></app-doctor>
+    <app-doctor *ngFor="let doctor of filteredDoctorList" [doctor]="doctor"></app-doctor>
   </section>
   `,
   styleUrls: ['./home.component.css'],
@@ -27,8 +27,22 @@ import { PatientService } from '../patient.service';
 export class HomeComponent {
   readonly baseUrl = 'assets/';
   doctorList: Doctor[] = [];
+  filteredDoctorList: Doctor[] = [];
   patientService = inject(PatientService);
   constructor() {
     this.doctorList = this.patientService.getAllDoctors();
+    this.filteredDoctorList = this.doctorList;
   }
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredDoctorList = this.doctorList;
+      return;
+    }
+  
+    this.filteredDoctorList = this.doctorList.filter(
+      doctor => doctor?.specialization.toLowerCase().includes(text.toLowerCase())
+    );
+  }
+  
 }
+
