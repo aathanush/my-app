@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { PatientService } from '../patient.service';
-import { Doctor } from '../doctor';
+import { PatientService } from '../../services/patient.service';
+import { Doctor } from '../../doctor';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Doctor } from '../doctor';
+import { Doctor } from '../../doctor';
 import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-doctor',

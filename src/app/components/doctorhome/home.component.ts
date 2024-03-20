@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorComponent } from '../doctor/doctor.component';
-import { Doctor } from '../doctor';
-import { PatientService } from '../patient.service';
+import { Doctor } from '../../doctor';
+import { PatientService } from '../../services/patient.service';
 @Component({
   selector: 'app-home',
   standalone: true,

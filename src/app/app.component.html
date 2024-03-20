@@ -1,8 +1,24 @@
-
-<main class="main">
-  <h1>Hello, User!</h1>
-  <img src="favicon.ico" />
+<main>
+  <nav>
+    <ul>
+      <li>
+    <a [routerLink]="['/doctors']">
+      Doctors 
+    </a>
+      </li>
+      <li>
+    <a [routerLink]="['/appointments']">
+      Appointments
+    </a>
+      </li>
+      <li>
+    <a [routerLink]="['/']">
+      Log out
+    </a>
+      </li>
+    </ul>
+  </nav>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
 </main>
-
-
-<router-outlet />

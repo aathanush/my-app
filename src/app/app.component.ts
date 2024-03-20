@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
-import { Router, RouterModule, RouterOutlet, RouterLink } from '@angular/router';
+import { HomeComponent } from './components/doctorhome/home.component';
+import { RouterModule, RouterOutlet, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,32 +10,7 @@ import { Router, RouterModule, RouterOutlet, RouterLink } from '@angular/router'
     RouterOutlet,
     RouterLink
   ],
-  template: `
-    <main>
-      <nav>
-        <ul>
-          <li>
-        <a [routerLink]="['/']">
-          Doctors 
-        </a>
-          </li>
-          <li>
-        <a [routerLink]="['/appointments']">
-          Appointments
-        </a>
-          </li>
-          <li>
-        <a [routerLink]="['/login']">
-          Log out
-        </a>
-          </li>
-        </ul>
-      </nav>
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
