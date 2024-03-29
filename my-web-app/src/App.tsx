@@ -1,25 +1,34 @@
-import { useState } from 'react'
 import './App.css'
-import { Button } from './components/ui/button'
-import { useToast } from './components/ui/use-toast'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
 
 function App() {
-  const [count, setCount] = useState(0)
-  const {toast} = useToast()
 
   return (
     <>
-    <Button onClick={() => {
-        setCount(count+1);
-        toast({
-          title: "Count updated",
-          description: "Your count has been updated"
-        })
-      }}
->Button</Button>
-    <p>{count}</p>
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>About</NavigationMenuTrigger>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Achievements</NavigationMenuTrigger>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
     </>
   )
-}
+  }
 
 export default App
